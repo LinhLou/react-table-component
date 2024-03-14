@@ -13,6 +13,10 @@
   grid-template-rows: max-content content max-content;
   row-gap: 1.2rem;
 }
+
+.table_container_ct{
+  background-color: burlywood;
+}
 .table_header_df{
   display: flex;
   justify-content: space-between;

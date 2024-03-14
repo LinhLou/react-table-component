@@ -111,7 +111,7 @@ export default function DataTable({ titleTbl, data, searchTbl, pagination, pagin
 
   // default affichage when there is no pagination option
   let nbrRows_df;
-  
+
   // default paginationConfig
   if(!paginationConfig){
     nbrRows_df = 5;
@@ -144,8 +144,8 @@ export default function DataTable({ titleTbl, data, searchTbl, pagination, pagin
   }
 
   return (
-    <div className={style.table_section}>
-      <div className={style.table_container}>
+    <div className={style.table_section} data-testid='tableSection'>
+      <div className={style.table_container} data-testid='tableContainer'>
         <div className={style.table_header}>
           <span className={style.table_title} role='titleTbl'>{titleTbl}</span>
           {searchTbl && <FiltreBar style={style.table_filter} dataRef = {data} updateFilterdData={updateFilterdData} nbrRows={nbrRows} updateDataTbl={updateDataTbl} updateIndexTbl={updateIndexTbl}/>}

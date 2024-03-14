@@ -28,7 +28,7 @@ export default function Table({ data, style, updateDataTbl}) {
                     {
                       Object.entries(ele).map((ele,indexItem)=>{
                         return(
-                          <td key={`item${indexrow}${indexItem}`} scope="row" className={style.tbody.td} >
+                          <td key={`item${indexrow}${indexItem}`} scope="row" className={style.tbody.td} role='cellTbl'>
                             {ele[1]}
                           </td>
                         )
