@@ -1,0 +1,164 @@
+.table_section_df{
+  background-color: transparent;
+  display:flex;
+  justify-content: center;
+}
+
+.table_section_ct{
+  background-color: yellow;
+}
+
+.table_container_df{
+  display: grid;
+  grid-template-rows: max-content content max-content;
+  row-gap: 1.2rem;
+}
+.table_header_df{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table_title_df{
+  font-size: 1.8rem;
+}
+.table_filter_df{
+  outline: none;
+  background-color: transparent;
+  border-radius: 0.3rem;
+  border: 1px solid black;
+  padding:5px;
+}
+.table_footer_df{
+  display: flex;
+  justify-content: end;
+}
+
+.table_df{
+  background-color:white;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.table_ct{
+  background-color:burlywood;
+}
+
+.table_head_tr_df{
+  color:black;
+}
+.table_head_tr_df th{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.table_head_th_df{
+  padding:5px;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  align-items: center;
+}
+.table_head_th_name_df{
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* icon in head table */
+.table_head_th_icon_df{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.table_head_th_icon_df :nth-child(1) {
+  margin-bottom:-7px;
+  /* top:5px; */
+  /* border:1px solid black; */
+}
+.table_head_th_icon_df :nth-child(2) {
+  margin-top:-7px;
+  /* top:5px; */
+  /* border:1px solid black; */
+}
+
+.table_head_th_icon_df svg:hover{
+  fill:black;
+}
+/*  tr and td body table */
+
+.table_body_tr_df{
+  color:black;
+  text-align: center;
+  border: 1px solid black;
+
+}
+.table_body_tr_df:hover{
+ background-color: grey;
+ color:white;
+}
+.table_body_td_df{
+  padding:5px 10px;
+  text-align: left;
+  border: 1px solid black;
+}
+
+/* pagination section */
+.pagination_container_df{
+  position: relative;
+  display: flex;
+  gap:20px;
+}
+
+.pagination_container_df svg:hover{
+  fill:black;
+}
+.pagination_select_container_df{
+  width: 70px;
+}
+.pagination_select_title_df{
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  align-items: center;
+  border:1px solid black;
+  padding:5px;
+}
+.pagination_select_option_df{
+  width: 70px;
+  position: absolute;
+}
+.pagination_select_option_df ul{
+  padding: 0;
+  margin:0;
+}
+.pagination_select_option_df li{
+  list-style-type: none;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  padding:5px;
+}
+
+.pagination_select_option_df li:hover{
+  background-color: black;
+  color:white;
+}
+
+.pagination_currentPage_df{
+  width: 100px;
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
+.pagination_arrows_container_df{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap:10px;
+  align-items: center;
+}
+#selectVisib{
+  display: block;
+}
+#selectHidden{
+  display: none;
+}
+
+
