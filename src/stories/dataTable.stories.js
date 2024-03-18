@@ -1,5 +1,5 @@
 import { within, fireEvent, expect } from '@storybook/test';
-import DataTable from "../component/dataTable/dataTable";
+import { DataTable } from "../component/dataTable/dataTable";
 import { data } from "../data";
 import '../styles/tableStyles.css';
 
@@ -125,7 +125,7 @@ export const StyleCustomized = {
       // table_filter: 'table_filter_ct',
       // table_footer: 'table_footer_ct',
       // table_contenu__table: 'table_ct',
-      // table_contenu__thead__tr: 'table_head_tr_ct',
+      table_contenu__thead__tr: 'table_head_tr_ct',
       // table_contenu__thead__th__icon__container: 'table_head_th_icon_ct',
       // table_contenu__thead__th__icon__color: 'grey',
       // table_contenu__thead__th__icon__size: '1.5rem',
@@ -141,7 +141,7 @@ export const StyleCustomized = {
       // table_pagination__select__options: 'pagination_select_option_ct',
       // table_pagination__currentPage: 'pagination_currentPage_ct',
       // table_pagination__arrows__container: 'pagination_arrows_container_ct',
-      // table_pagination__arrows__icon__color: 'grey',
+      table_pagination__arrows__icon__color: 'red',
       // table_pagination__arrows__icon__size: '1.5rem'
     }
 
