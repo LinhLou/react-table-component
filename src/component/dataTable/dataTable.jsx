@@ -79,14 +79,51 @@ const styleDefault = [
   }
 ];
 
-
-const replaceString = (oldS, newS, fullS) => {
-  return fullS.split(oldS).join(newS);
-};
+const setNestedValueObj = (value, keys, obj)=>{
+  const nbrKey = keys.length;
+  switch(nbrKey){
+    case 1:
+      if(keys.includes('color')||keys.includes('size')){
+        obj[keys[0]] = value;
+      }else{
+        obj[keys[0]] += ` ${value}`;
+      }
+      break;
+    case 2:
+      if(keys.includes('color')||keys.includes('size')){
+        obj[keys[0]][keys[1]] = value;
+      }else{
+        obj[keys[0]][keys[1]] += ` ${value}`;
+      }
+      
+      break;
+    case 3:
+      if(keys.includes('color')||keys.includes('size')){
+        obj[keys[0]][keys[1]][keys[2]] = value;
+      }else{
+        obj[keys[0]][keys[1]][keys[2]] += ` ${value}`;
+      }
+      break;
+    case 4:
+      if(keys.includes('color')||keys.includes('size')){
+        obj[keys[0]][keys[1]][keys[2]][keys[3]] = value;
+      }else{
+        obj[keys[0]][keys[1]][keys[2]][keys[3]] += ` ${value}`;
+      }
+      
+      break;
+    case 5:
+      if(keys.includes('color')||keys.includes('size')){
+        obj[keys[0]][keys[1]][keys[2]][keys[3]][keys[4]] = value;
+      }else{
+        obj[keys[0]][keys[1]][keys[2]][keys[3]][keys[4]] += ` ${value}`;
+      }
+      break;
+  }
+}
 
 
 export function DataTable({ titleTbl, data, searchTbl, pagination, paginationConfig, styleCustom }) {
-  //  className applied to table
 
   let style = styleDefault.reduce((acc, ele) => {
     const key = ele.nameStyle;
@@ -95,17 +132,11 @@ export function DataTable({ titleTbl, data, searchTbl, pagination, paginationCon
     return acc;
   }, {});
 
- 
   if (styleCustom) {
-
     Object.entries(styleCustom).map(([prop, value]) => {
-      if (prop.includes('__')) {
-        const key = replaceString('__', '][', prop);     
-        const keys = `style[${key}]`;
-        
-        if (keys.includes('[icon][color]') || keys.includes('[icon][size]')) {
-        } else {
-        }
+      if (prop.includes('__')) {   
+        const keys = prop.split('__');
+        setNestedValueObj(value, keys, style);
       } else {
         style[prop] += ` ${value}`;
       }
