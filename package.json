@@ -1,10 +1,10 @@
 {
-  "name": "react-data-table-ll-02",
+  "name": "react-data-table-ll",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "files": [ "dist", "README.md" ],  
+  "files": [ "dist", "storybook-static", "README.md" ],  
   "repository": {    
     "type": "git",    
     "url": "URL_OF_YOUR_REPOSITORY"  
