@@ -16,7 +16,7 @@ export const data = {
       name:'Birthday',
       value:'birthday',
       type:'date',
-      sortable:false
+      sortable:true
     },
     {
       name:'City',
@@ -27,9 +27,9 @@ export const data = {
   ],
   rows: [
     {
-      name: 'Linh Dang',
+      name: '',
       age: 36,
-      birthday:'25/05/1987',
+      birthday:'',
       city: 'Saint-Nazaire'
     },
     { 
@@ -63,15 +63,15 @@ export const data = {
       city:'Hanoi'
     },
     {
-      name: 'Dang Thi Nhat Linh',
+      name: '',
       age: 36,
-      birthday:'28/04/1987',
+      birthday:'',
       city:'Hanoi'
     },
     { 
-      name: 'Dang Thi Lan Huong',
+      name: '',
       age: 30,
-      birthday:'26/10/1993',
+      birthday:'',
       city:'Hanoi'
     },
     {

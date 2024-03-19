@@ -81,19 +81,22 @@ const styleDefault = [
 
 const setNestedValueObj = (value, keys, obj)=>{
   const nbrKey = keys.length;
+  const getDefaultStyle = (styles)=>{
+    return styles.split(' ')[0]
+  } 
   switch(nbrKey){
     case 1:
       if(keys.includes('color')||keys.includes('size')){
         obj[keys[0]] = value;
       }else{
-        obj[keys[0]] += ` ${value}`;
+        obj[keys[0]] = `${getDefaultStyle(obj[keys[0]])} ${value}`;
       }
       break;
     case 2:
       if(keys.includes('color')||keys.includes('size')){
         obj[keys[0]][keys[1]] = value;
       }else{
-        obj[keys[0]][keys[1]] += ` ${value}`;
+        obj[keys[0]][keys[1]] = `${getDefaultStyle(obj[keys[0]][keys[1]])} ${value}`;
       }
       
       break;
@@ -101,14 +104,14 @@ const setNestedValueObj = (value, keys, obj)=>{
       if(keys.includes('color')||keys.includes('size')){
         obj[keys[0]][keys[1]][keys[2]] = value;
       }else{
-        obj[keys[0]][keys[1]][keys[2]] += ` ${value}`;
+        obj[keys[0]][keys[1]][keys[2]] = `${getDefaultStyle(obj[keys[0]][keys[1]][keys[2]])} ${value}`;
       }
       break;
     case 4:
       if(keys.includes('color')||keys.includes('size')){
         obj[keys[0]][keys[1]][keys[2]][keys[3]] = value;
       }else{
-        obj[keys[0]][keys[1]][keys[2]][keys[3]] += ` ${value}`;
+        obj[keys[0]][keys[1]][keys[2]][keys[3]] = `${getDefaultStyle(obj[keys[0]][keys[1]][keys[2]][keys[3]])} ${value}`;
       }
       
       break;
@@ -116,7 +119,7 @@ const setNestedValueObj = (value, keys, obj)=>{
       if(keys.includes('color')||keys.includes('size')){
         obj[keys[0]][keys[1]][keys[2]][keys[3]][keys[4]] = value;
       }else{
-        obj[keys[0]][keys[1]][keys[2]][keys[3]][keys[4]] += ` ${value}`;
+        obj[keys[0]][keys[1]][keys[2]][keys[3]][keys[4]] = `${getDefaultStyle(obj[keys[0]][keys[1]][keys[2]][keys[3]][keys[4]])} ${value}`;
       }
       break;
   }
@@ -138,7 +141,8 @@ export function DataTable({ titleTbl, data, searchTbl, pagination, paginationCon
         const keys = prop.split('__');
         setNestedValueObj(value, keys, style);
       } else {
-        style[prop] += ` ${value}`;
+        const styleClass =  style[prop].split(' ')[0];
+        style[prop] = `${styleClass} ${value}`;
       }
     });
   }

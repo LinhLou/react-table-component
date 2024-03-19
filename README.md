@@ -41,21 +41,15 @@ react-data-table-ll is a simple and flexible React table component for displayin
   rows: [
     {
       name: 'Linh Dang',
-      age: 36,
-      birthday:'25/05/1987',
-      city: 'Saint-Nazaire'
+      age: 36
     },
     { 
       name: 'Liam Dan',
-      age: 1,
-      birthday:'10/04/2022',
-      city:'Saint-Nazaire'
+      age: 1
     },
     {
       name: 'Bui Huu Kien',
-      age: 35,
-      birthday:'10/10/1987',
-      city:'Saint-Nazaire'
+      age: 35
     }
   ]
 }
@@ -74,7 +68,7 @@ paginationConfig = {
 
 ### Style Customizable
 
-#### in css file
+#### style.css file
 ```
 .table_title_ct{
   color: red;
@@ -83,8 +77,10 @@ paginationConfig = {
   background: red;
 }
 ```
-#### in jsx file
+####  component.jsx file
 ```jsx
+import './style.css';
+
 styleCustom = {
       table_title: 'table_title_ct',
       table_filter: 'table_filter_ct'
@@ -104,7 +100,7 @@ styleCustom = {
 | table_footer                               | string    |  style class name  | Footer contains the pagination section                         |
 | table_contenu__table                       | string    |  style class name  | The element `<table>` contain data of the table                |
 | table_contenu__thead__tr                   | string    |  style class name  | The element `<tr>` inside element `<thead>` of the table       |
-| table_contenu__thead__th__icon__container  | string    |  style class name  | The icon container for sorting                                 |
+| table_contenu__thead__th__icon__container  | string    |  style class name  | The icon container of the sorting section                                 |
 | table_contenu__thead__th__icon__color      | string    |  name of color     | The icon color for sorting (Ex.: 'red')                        |
 | table_contenu__thead__th__icon__size       | string    |  size of icon      | The icon size for sorting (Ex.: '1.5rem')                      |
 | table_contenu__thead__th__container        | string    |  style class name  | The container for the header cell of each column               |

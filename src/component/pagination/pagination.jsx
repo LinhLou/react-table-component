@@ -25,9 +25,6 @@ export default function Pagination({style, data, updateIndexTbl, indexTbl, nbrRo
     }
   }
 
-  const size = '1.3rem';
-  const color = 'black';
-
   const setIndexTabl = (index,flag)=>{
     switch(flag){
       case 'next':
