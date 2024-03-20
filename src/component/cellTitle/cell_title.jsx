@@ -5,8 +5,10 @@ const sortData = (fa, fb, des)=>{
     return 1
   }else if(fb==''){
     return -1
+  }else if(fa==''&&fb==''){
+    return 0
   }
-  
+
   if(des){
     if (fa > fb) {
         return -1;
@@ -42,6 +44,12 @@ const sortColumn = (data1, data2, type, des=true)=>{
     case 'date':
       fa = dateToNbr(data1);
       fb = dateToNbr(data2);
+      if(data1==''){
+        fa = 0;
+      }
+      if(data2==''){
+        fb=0;
+      }
       return sortData(fa,fb,des);
     case 'number':
       return sortData(data1,data2,des);
@@ -60,7 +68,6 @@ export default function Cell_title({style, name, type, sortable, updateDataTbl, 
 
   // console.log(employees);
   const dataSortedByEmptyFile = employees.sort((row1,row2)=>sortData(row1[value], row2[value], true))
-  console.log(dataSortedByEmptyFile);
 
   const sortEmployees = (employees, des=true)=>{
     const sortedData = employees.sort((row1, row2)=>sortColumn(row1[value],row2[value],type,des));
@@ -85,12 +92,8 @@ export default function Cell_title({style, name, type, sortable, updateDataTbl, 
       <div className={style.name}>{name}</div>
       {sortable && 
       <div className={style.icon.container} role='sortTbl'>
-      {/* <div role='sortUp' onClick = {handleClickUp}> */}
         <svg  role='sortUp' onClick = {handleClickUp} viewBox="0 0 320 512"  height={style.icon.size} width={style.icon.size} fill={style.icon.color}><path d="M182.6 137.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H288c12.9 0 24.6-7.8 29.6-19.8s2.2-25.7-6.9-34.9l-128-128z"/></svg>
-      {/* </div> */}
-      {/* <div role='sortDown' onClick = {handleClickDown}> */}
         <svg  role='sortDown' onClick = {handleClickDown} viewBox="0 0 320 512"  height={style.icon.size} width={style.icon.size} fill={style.icon.color}><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></svg>
-      {/* </div> */}
       </div> 
       }
     </div>
