@@ -41,7 +41,8 @@ const styleDefault = [
           icon: {
             container: 'table_head_th_icon_df',
             color: 'grey',
-            size: '1.5rem'
+            size: '1.5rem',
+            color_actived: 'black'
           },
           container: 'table_head_th_df',
           name: 'table_head_th_name_df'

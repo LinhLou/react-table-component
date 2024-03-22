@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cell_title from '../cellTitle/cell_title';
 
 
 
 export default function Table({ data, style, updateDataTbl}) {
+
+  const [isActive, setIsActive] = useState(new Array(data.columns.length).fill(0));
+  
+  const updateIndexActive = (index)=>{
+    setIsActive(isActive.map((ele,i)=>i===index? 1:0));
+  }
+
 
   return (
       <table className={style.table}>
@@ -13,7 +20,7 @@ export default function Table({ data, style, updateDataTbl}) {
               data.columns.map((ele,index)=>{
                 return(
                   <th key= {`title_${index}`} scope="col" role='titleColumn'>
-                      <Cell_title style={style.thead.th} name={ele.name} type = {ele.type} sortable={ele.sortable}  data={data} updateDataTbl={updateDataTbl}/>
+                      <Cell_title style={style.thead.th} name={ele.name} type = {ele.type} sortable={ele.sortable}  data={data} updateDataTbl={updateDataTbl}  isActive={isActive[index]} updateIndexActive={updateIndexActive} index={index}/>
                   </th>
                 )
               })
