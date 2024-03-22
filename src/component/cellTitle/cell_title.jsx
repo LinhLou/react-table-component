@@ -29,6 +29,9 @@ const sortData = (fa, fb, des)=>{
 const sortColumn = (data1, data2, type, des=true)=>{
   let fa;
   let fb;
+  if(data1==''&&data2==''){
+    return 0
+  }
 
   const dateToNbr = (date)=>{
     const dateString = date.split('/');

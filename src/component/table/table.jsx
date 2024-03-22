@@ -37,7 +37,7 @@ export default function Table({ data, style, updateDataTbl}) {
                   </tr>
                 )
               })
-              : <tr  className={style.tbody.tr} ><td colSpan={data.columns.length} className={style.tbody.td} data-testid ='noEmployeeFound'>No employee corresponds to the search criteria</td></tr>
+              : <tr  className={style.tbody.tr} ><td colSpan={data.columns.length} className={style.tbody.td} data-testid ='noEmployeeFound' id='table_no-result'>No employee corresponds to the search criteria</td></tr>
             }
           </tbody>
       </table>

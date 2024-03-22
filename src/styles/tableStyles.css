@@ -92,8 +92,11 @@
 }
 .table_body_td_df{
   padding:5px 10px;
-  text-align: left;
+  text-align: center;
   border: 1px solid black;
+}
+#table_no-result{
+  text-align: center;
 }
 
 /* pagination section */
