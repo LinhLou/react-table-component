@@ -13,13 +13,13 @@ react-data-table-ll is a simple and flexible React table component for displayin
 
 ## Installation
 ```bash
-  npm install --save react-data-table-ll
+  npm install --save react-data-table-oc
 ```
 
 ## Usage
 ### import
 ```bash
- import { DataTable } from 'react-data-table-ll'
+ import { DataTable } from 'react-data-table-oc'
 ```
 ### simple use
 ```jsx

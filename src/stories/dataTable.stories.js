@@ -50,7 +50,7 @@ export const TableWithFilter = {
 
     await fireEvent.change(filterEle, { target: { value: 'Hello' } });
     const resEle = canvas.queryByTestId('noEmployeeFound');
-    await expect(resEle.innerText).toBe('No employee corresponds to the search criteria');
+    await expect(resEle.innerText).toBe('No item corresponds to the search criteria');
 
     await fireEvent.change(filterEle, { target: { value: 'Saint-Nazaire' } });
     const employeeEles = canvas.getAllByRole('employeeInfosContainer');
@@ -154,4 +154,5 @@ export const StyleCustomized = {
     await expect(tableContainerEle).toHaveClass('table_container_ct');
   },
 }
+
 
